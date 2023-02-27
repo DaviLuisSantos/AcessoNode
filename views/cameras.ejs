@@ -1,0 +1,57 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Página</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<!-- cameras.ejs -->
+
+<!-- Adicionar câmera -->
+<a href="/" class="btn btn-primary">Voltar</a>
+<a href="/cameras/nova" class="btn btn-primary">Adicionar Câmera</a>
+
+
+<!-- Tabela de câmeras -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Local</th>
+      <th>IP</th>
+      <th>Porta API</th>
+      <th>Modelo</th>
+      <th>Direção</th>
+      <th>ID Área</th>
+      <th>Descrição Área</th>
+      <th>Login</th>
+      <th>Senha</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cameras.forEach((camera) => { %>
+      <tr>
+        <td><%= camera.ID %></td>
+        <td><%= camera.LOCAL %></td>
+        <td><%= camera.IP %></td>
+        <td><%= camera.PORTA_API %></td>
+        <td><%= camera.MODELO %></td>
+        <td><%= camera.DIRECAO %></td>
+        <td><%= camera.ID_AREA %></td>
+        <td><%= camera.DESC_AREA %></td>
+        <td><%= camera.LOGIN %></td>
+        <td><%= camera.SENHA %></td>
+        <td>
+          <a href="/cameras/<%= camera.ID %>/acesso" class="btn btn-primary">Acessos</a>
+          <!-- Editar câmera -->
+          <a href="/cameras/<%= camera.ID %>/editar" class="btn btn-primary">Editar</a>
+
+          <!-- Excluir câmera -->
+          <a href="/cameras/<%= camera.ID %>/excluir" class="btn btn-danger btn-sm">Excluir</a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+

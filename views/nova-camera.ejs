@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Nova Câmera</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>Nova Câmera</h1>
+    <button onclick="history.back()">Voltar</button>
+    <form action="/cameras/nova" method="post">
+        <label for="local">Local:</label>
+        <input type="text" name="local" id="local"><br>
+      
+        <label for="ip">Endereço IP:</label>
+        <input type="text" name="ip" id="ip"><br>
+      
+        <label for="porta_api">Porta API:</label>
+        <input type="text" name="porta_api" id="porta_api"><br>
+      
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" id="modelo"><br>
+      
+        <label for="direcao">Direção:</label>
+        <select name="direcao" id="direcao">
+            <option value="ENTRADA">Entrada</option>
+            <option value="SAIDA">Saída</option>
+          </select><br>
+      
+        <label for="id_area">ID da Área:</label>
+        <input type="text" name="id_area" id="id_area"><br>
+      
+        <label for="desc_area">Descrição da Área:</label>
+        <input type="text" name="desc_area" id="desc_area"><br>
+      
+        <label for="inativa">Inativa:</label>
+        <input type="checkbox" name="inativa" id="inativa"><br>
+      
+        <label for="login">Login:</label>
+        <input type="text" name="login" id="login"><br>
+      
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha"><br>
+      
+        <label for="porta_http">Porta HTTP:</label>
+        <input type="text" name="porta_http" id="porta_http"><br>
+      
+        <button type="submit">Adicionar câmera</button>
+      </form>      
+  </body>
+</html>

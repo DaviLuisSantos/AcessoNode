@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Editar Câmera</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>Editar Câmera</h1>
+    <button onclick="history.back()">Voltar</button>
+    <form action="/cameras/<%= camera.ID %>/editar" method="post">
+      <div>
+        <label for="local">Local:</label>
+        <input type="text" name="local" value="<%= camera.LOCAL %>">
+      </div>
+      <div>
+        <label for="ip">IP:</label>
+        <input type="text" name="ip" value="<%= camera.IP %>">
+      </div>
+      <div>
+        <label for="porta_api">Porta API:</label>
+        <input type="number" name="porta_api" value="<%= camera.PORTA_API %>">
+      </div>
+      <div>
+        <label for="modelo">Modelo:</label>
+        <input type="text" name="modelo" value="<%= camera.MODELO %>">
+      </div>
+      <div>
+        <label for="direcao">Direção:</label>
+        <select name="direcao" value="<%= camera.DIRECAO %>">
+            <option value="ENTRADA">Entrada</option>
+            <option value="SAIDA">Saída</option>
+          </select><br>
+      </div>
+      <div>
+        <label for="id_area">ID Área:</label>
+        <input type="number" name="id_area" value="<%= camera.ID_AREA %>">
+      </div>
+      <div>
+        <label for="desc_area">Desc Área:</label>
+        <input type="text" name="desc_area" value="<%= camera.DESC_AREA %>">
+      </div>
+      <div>
+        <label for="inativa">Inativa:</label>
+        <input type="checkbox" name="inativa" <%= camera.INATIVA ? "checked" : "" %>>
+      </div>
+      <div>
+        <label for="login">Login:</label>
+        <input type="text" name="login" value="<%= camera.LOGIN %>">
+      </div>
+      <div>
+        <label for="senha">Senha:</label>
+        <input type="text" name="senha" value="<%= camera.SENHA %>">
+      </div>
+      <div>
+        <label for="porta_http">Porta HTTP:</label>
+        <input type="number" name="porta_http" value="<%= camera.PORTA_HTTP %>">
+      </div>
+      <button type="submit">Salvar</button>
+    </form>
+  </body>
+</html>

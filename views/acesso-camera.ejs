@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/cameras" class="btn-cancelar">VOLTAR</a>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Local</th>
+            <th>Data e Hora</th>
+            <th>Unidade</th>
+            <th>Placa LPR</th>
+            <th>Dados do Veiculo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% acessos.forEach((acesso) => { %>
+            <tr>
+              <td><%= acesso.ID %></td>
+              <td><%= acesso.LOCAL %></td>
+              <td><%= acesso.DATA_HORA %></td>
+              <td><%= acesso.UNIDADE %></td>
+              <td><%= acesso.PLACA_LPR %></td>
+              <td><%= acesso.DADOS_VEICULO %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+</body>
+</html>
