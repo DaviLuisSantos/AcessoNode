@@ -15,9 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.json());
-
 // Configuração do body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 // Conexão com o banco de dados
@@ -223,11 +223,6 @@ router.get('/:id/acesso', (req, res) => {
 
 });
 
-router.get('/:id/stream', function (req, res) {
-    var cameraId = req.params.id;
-    var rtspUrl = 'rtsp://admin:123456@192.168.0.145:554/profile2'//getRtspUrl(cameraId); // função que retorna a URL do stream RTSP
-    res.render('Cameras/stream-camera', { rtspUrl: rtspUrl });
-});
 
 function getRtspUrl(id_cam) {
     Firebird.attach(options, (err, db) => {

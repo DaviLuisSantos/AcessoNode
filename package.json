@@ -15,9 +15,14 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "ini": "^3.0.1",
     "node-firebird": "^1.1.5",
     "node-rtsp-stream": "^0.0.9",
     "node-rtsp-stream-jsmpeg": "^0.0.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "rtsp-ffmpeg": "^0.0.16",
+    "serve-static": "^1.15.0",
+    "socket.io": "^4.6.1"
   }
 }

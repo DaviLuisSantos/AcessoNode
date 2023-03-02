@@ -5,7 +5,6 @@ const path = require('path');
 const ejs = require('ejs');
 const bodyParser = require('body-parser'); // Importar o body-parser
 const { Console } = require('console');
-const Stream = require('node-rtsp-stream');
 
 const app = express();
 const port = 3000;
@@ -20,6 +19,8 @@ app.use(bodyParser.json())
 
 const cameraRoute = require('./routes/Cameras')
 app.use("/cameras", cameraRoute)
+const streamRoute = require('./routes/Stream')
+app.use("/stream", streamRoute)
 // Conexão com o banco de dados
 app.get('/', (req, res) => {
     res.render('index');
@@ -28,4 +29,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`VER AS CAMERAS http://localhost:${port}/cameras`);
     console.log(`ADICIONAR NOVA http://localhost:${port}/cameras/nova`)
-});
+}); 
